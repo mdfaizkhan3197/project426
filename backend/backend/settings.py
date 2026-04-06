@@ -117,6 +117,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://project426-1zxgpz4tk-mdfaizkhan3197s-projects.vercel.app",
 ]
 
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 # Django REST Framework
