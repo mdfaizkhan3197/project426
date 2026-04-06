@@ -34,3 +34,19 @@ class ExpenseUpdateView(generics.RetrieveUpdateAPIView):
 
     def get_queryset(self):
         return Expense.objects.filter(user=self.request.user)
+    
+@api_view(['POST'])
+def login_view(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+
+    user = authenticate(username=username, password=password)
+
+    if user is not None:
+        refresh = RefreshToken.for_user(user)
+        return Response({
+            "refresh": str(refresh),
+            "access": str(refresh.access_token),
+        })
+    
+    return Response({"error": "Invalid credentials"}, status=401)
