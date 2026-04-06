@@ -114,6 +114,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://project426.vercel.app",
+    "https://project426-1zxgpz4tk-mdfaizkhan3197s-projects.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
